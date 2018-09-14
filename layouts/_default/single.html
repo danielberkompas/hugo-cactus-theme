@@ -28,4 +28,4 @@
   </section>
 </footer>
 
-{{ template "_internal/disqus.html" . }} {{ partial "latest-posts.html" . }} {{ end }}
+{{ if (.Params.comments) | or ((not (isset .Params "comments"))) }} {{ template "_internal/disqus.html" . }} {{end}} {{ partial "latest-posts.html" . }} {{ end }}
