@@ -4,8 +4,8 @@
 {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 {{ .Hugo.Generator }}
-<title>{{ .Title }}{{ if .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
-<link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}">
+<title>{{ .Title }}{{ if .IsHome }}{{ else }} &middot; {{ .Site.Title }}{{ end }}</title>
+<link rel="shortcut icon" href="{{ "favicon.ico?v=1" | absURL }}">
 <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
 {{ range .Site.Params.customCSS }}
 <link rel="stylesheet" href="{{ . | absURL }}">
